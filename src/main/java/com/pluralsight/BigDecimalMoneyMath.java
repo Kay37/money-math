@@ -1,7 +1,5 @@
 package com.pluralsight;
 
-import org.w3c.dom.ls.LSOutput;
-
 import java.math.BigDecimal;
 
 public class BigDecimalMoneyMath {
@@ -47,7 +45,7 @@ public class BigDecimalMoneyMath {
 
 
         //? Loop 1: are they the same? do they differ?
-        //! The BigDecimal was always even (rounded). The float and double were mostly right, but on some rows
+        //! The BigDecimal was always even (exact). The float and double were mostly right, but on some rows
         //! (like Double: 0.30000000000000004 or Float: 0.70000005) they're a bit off because
         //! some numbers can't be written exactly. like writing 1/3 as a decimal.
         //? Loop 2: are they the same? do they differ?
@@ -63,7 +61,7 @@ public class BigDecimalMoneyMath {
         //! Float and double use binary fractions. Big Decimal remembers your number as *whole digits* plus where the
         //! decimal point belongs.
         //? How many cents is the float off after 1000 iterations?
-        //! 0.184 cents.
+        //! 0.184 dollars (18.4 cents).
         //? Why does the BigDecimal print 1.00 and not 1?
         //! Because I made it with 0.10. 0.10 has two digits after the decimal point, so when we get to 1.00 it will
         //! remember that.
